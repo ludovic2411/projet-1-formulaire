@@ -1,0 +1,66 @@
+body{
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: Bellota;
+  background-color: #FFF;
+}
+@font-face {
+  font-family: "Bellota";
+  src:url("Bellota-Regular.otf");
+}
+.logo{
+  border: solid 5px #15c5bd;
+  background-color: #303030;
+  border-radius: 10px;
+}
+.form{
+  background-color: #303030;
+  color:#15c5bd;
+  margin-bottom: 25px;
+  border: solid 5px #15c5bd;
+  border-radius: 10px;
+}
+.info{
+  float: left;
+  text-align: left;
+  line-height: 50px;
+}
+.message{
+  text-align: left;
+  float:right;
+  line-height: 50px;
+}
+.button{
+margin-left: 240px;
+}
+.button input{
+  cursor:pointer;
+}
+.test_email{
+  display: none;
+}
+.nom input{
+  margin-left: 30px;
+  width: 170px;
+  color:#952036;
+  font-size: 13px;
+}
+.prenom input{
+  width: 168px;
+  font-size: 13px;
+  color:#952036;
+}
+.Pays input{
+  margin-left: 35px;
+  width:170px;
+  font-size: 13px;
+  color:#952036;
+}
+.email input{
+  margin-left: 26px;
+  width: 170px;
+  font-size: 13px;
+  color:#952036;
+}
