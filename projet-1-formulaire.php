@@ -6,7 +6,23 @@
     <title>Contact Hackers Poulette</title>
   </head>
   <body>
-    <section class="logo">
+    <?php
+    if($_GET['erreur']){
+      echo $_GET['erreur'];
+    }else{
+      echo "pas ok";
+    }
+
+    $genre=$_POST['genre'];
+    $nom=$_POST['nom'];
+    $prenom=$_POST['prenom'];
+    $Pays=$_POST['Pays'];
+    $email=$_POST['email'];
+    $test_email=$_POST['test_email'];
+    $sujet=$_POST['sujet'];
+    $message=$_POST['Message'];
+     ?>
+  <section class="logo">
     <img src="logo.png" alt="logo hackers-poulettes">
   </section>
   <br>
@@ -15,34 +31,34 @@
     <h2>Contactez-nous à tout moment <br>
     et nous vous répondrons <br>
     le plus rapidement possible.</h2>
-    <form action="projet-1-formulaire.php" method="post">
+    <form action="projet-1-reponse.php" method="post">
       <fieldset>
-        <legend>Envoyez un un message au support technique</legend>
+        <legend>Envoyez un message au support technique</legend>
         <section class="info">
           <section class="genre">
             <label for="Genre">GENRE*</label><br>
-            <input type="radio" name="genre" value="Homme">Homme
-            <input type="radio" name="genre" value="Femme">Femme<br>
+            <input type="radio" name="genre" value="Monsieur">Monsieur
+            <input type="radio" name="genre" value="Madame">Madame<br>
           </section>
           <section class="nom">
-            <label for="nom">NOM*:</label><input type="text" value="Nom*" required><br>
+            <label for="nom">NOM*:</label><input name="nom" type="text" placeholder="Nom*" ><br>
           </section>
           <section class="prenom">
-            <label for="prenom">PRENOM*:</label><input type="text" value="Prenom*" required><br>
+            <label for="prenom">PRENOM*:</label><input name="prenom" type="text" placeholder="Prenom*" ><br>
           </section>
           <section class="Pays">
-            <label for="Pays">PAYS*</label><input type="text"  value="Pays*" required><br>
+            <label for="Pays">PAYS*</label><input name="Pays" type="text"  placeholder="Pays*" ><br>
           </section>
           <section class="email">
-            <label for="adresse e-mail">EMAIL*</label><input type="email" value="nom@mail.com*" required><br>
+            <label for="adresse e-mail">EMAIL*</label><input name="email" type="email" placeholder="nom@mail.com*" d><br>
           </section>
         <!-- Ne pas afficher/adresse-test -->
-          <input class="test_email" type="email" name="test-email">
-
+          <input name="test_email" class="test_email" type="email" name="test-email">
         </section>
-        <section class="message">
+        <!--0 droite du formulaire-->
+      <section class="message">
         <label for="sujet">SUJET*:</label><br>
-        <select name="sujet" required>
+        <select name="sujet" >
           <option value="Information-produit">Informations sur un produit</option>
           <option value="Problème-montage">Problème sur un montage </option>
           <option value="Activation-garantie">Activation de la garantie</option>
@@ -51,6 +67,7 @@
         MESSAGE:<br>
         <textarea name="Message" rows="20" cols="80">Votre message</textarea><br>
         <section class="button">
+          <!--PHP du submit-->
         <input  type="submit" name="submit" value="Envoyer">
         </section>
         Les champs suivis d'un * sont obligatoires.
