@@ -1,0 +1,33 @@
+body{
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: Bellota;
+  background-color: #FFF;
+}
+@font-face {
+  font-family: "Bellota";
+  src:url("Bellota-Regular.otf");
+}
+.logo{
+  border: solid 5px #15c5bd;
+  background-color: #303030;
+  border-radius: 10px;
+}
+.Champ_réponse{
+  background-color: #303030;
+  color:#15c5bd;
+  border: solid 5px #15c5bd;
+  border-radius: 10px;
+}
+.informations_clients ul{
+  list-style: none;
+  margin-left: 260px;
+}
+.informations_clients{
+
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
