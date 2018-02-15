@@ -1,3 +1,29 @@
+<?php
+if(isset($_POST['submit'])){
+  print_r($_POST);
+  $genre=$_POST['genre'];
+  $nom=$_POST['nom'];
+  $prenom=$_POST['prenom'];
+  $Pays=$_POST['Pays'];
+  $email=$_POST['email'];
+  $test_email=$_POST['test_email'];
+  $sujet=$_POST['sujet'];
+  $message_mail=$_POST['Message'];
+  //mail
+  // $to = "ludovic.ceccotti@gmail.com";
+  // $subject = $_POST['sujet'];
+  // $message = "Nom: ".$_POST['nom']."\r\n";
+  // $message .= "Prénom: ".$_POST['prenom']."\r\n";
+  // $message .= "Pays: ".$_POST['Pays']."\r\n";
+  // $message .= 'E-mail: '.$_POST['email']."\r\n";
+  // $message .= "Sexe: ".$_POST['genre']."\r\n";
+  // $message .= "Message: \r\n\r\n\r\n\r\n" .$_POST["Message"]."\r\n\r\n--\r\n\r\n";
+  // $headers = 'From: client@example.com' . "\r\n" .
+  // 'Reply-To: client@example.com' . "\r\n" .
+  // 'X-Mailer: PHP/' . phpversion();
+  //mail("ludovic@becode.org", "test", "coucou");
+}
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,27 +32,6 @@
     <title>Contact Hackers Poulette</title>
   </head>
   <body>
-    <?php
-
-    if(isset($_POST['submit'])){
-      $genre=$_POST['genre'];
-      $nom=$_POST['nom'];
-      $prenom=$_POST['prenom'];
-      $Pays=$_POST['Pays'];
-      $email=$_POST['email'];
-      $test_email=$_POST['test_email'];
-      $sujet=$_POST['sujet'];
-      $message=$_POST['Message'];
-      $to='ludovic.ceccotti@gmail.com';
-      $from="$email";
-      $objet="Envoi d'un formulaire de contact";
-      $headers = 'From: webmaster@example.com' . "\r\n" .
-      'Reply-To: webmaster@example.com' . "\r\n" .
-      'X-Mailer: PHP/' . phpversion();
-      mail($to, $objet, $headers, $message);
-    }
-
-     ?>
   <section class="logo">
     <img src="logo.png" alt="logo hackers-poulettes">
   </section>
@@ -59,7 +64,6 @@
           </section>
         <!-- Ne pas afficher/adresse-test -->
           <input name="test_email" class="test_email" type="email" name="test-email">
-        
         </section>
         <!--0 droite du formulaire-->
       <section class="message">
