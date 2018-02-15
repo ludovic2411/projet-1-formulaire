@@ -18,37 +18,47 @@
     $test_email=$_POST['test_email'];
     $sujet=$_POST['sujet'];
     $message=$_POST['Message'];
+    //array pour sanitiser
+    $champs = array(
+      'nom' => FILTER_SANITIZE_STRING,
+      'prenom' => FILTER_SANITIZE_STRING,
+      'Pays' => FILTER_SANITIZE_STRING,
+      'email' => FILTER_VALIDATE_EMAIL,
+      'Message' => FILTER_SANITIZE_STRING,
+      );
+      $champclean = filter_input_array (INPUT_POST, $champs);
+      if ($champclean !=FALSE) {
+        echo "Tous les champs ont été nettoyés!";
+      }
      ?>
    <br>
    <section class="Champ_réponse">
      <h2>Nous vous remercions de l'intérêt<br>
      que vous portez à Hackers-Poulettes<br>
      <?php
-        if (empty($genre)){
-          $error = true;
-          $errorGenre = "Pas de Genre";
-        }
-       if(empty($nom)){
-         $error = true;
-         $errorNom = "Pas de Nom ";
-       }
-       if(empty($prenom)){
-         $error = true;
-         $errorPrenom = "Pas de prenom ";
-       }
-       if(empty($Pays)){
-         $error = true;
-         $errorPays = "Pas de Pays ";
-       }
-       if($error){
-         $error =$errorGenre . $errorNom . $errorPrenom . $errorPays;
-         header("Location: projet-1-formulaire.php?erreur=". $error);
-         //php?=>méthode "get". .$error =>définition de la variable error
-       }
-       else {
-         echo "$genre $nom";
-       }
+     if (empty($genre)){
+      echo "Pas de genre";
+      }
+     elseif(empty($nom)){
+       echo "Précisez votre <u>nom dans le formulaire de contact</u>,<br> sauf si vous travaillez pour Anonymous.";
+     }
+     elseif(empty($prenom)){
+       echo "Précisez votre <u>prenom dans le formulaire de contact</u>,<br> sauf si vous travaillez pour Anonymous. ";
+     }
+     elseif(empty($Pays)){
+       echo "Veuillez préciser <u>votre pays dans le formulaire de contact</u>, <br> sauf si vous <br> vivez au pays imaginaire.";
+     }
+     elseif (empty($email)) {
+       echo "Veuillez préciser <u>votre email dans le formulaire de Contact</u>,<br> sauf si vous êtes espionné par la CIA.";
+     }
+     else {
+       echo "$prenom $genre $nom";
+     }
      ?>
+     <form>
+       <input type="button" value="Retourner au formulaire de contact"
+       onclick="window.location.href='index.php'"/>
+     </form>
    </h2>
      <p>Nous vous recontacterons dans les plus brefs délais.</p>
      <h3>Vos informations:</h3>
